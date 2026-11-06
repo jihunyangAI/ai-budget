@@ -6,16 +6,27 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:env": "node scripts/neon-env.mjs",
+    "db:migrate": "node --env-file=.env.local scripts/migrate.mjs",
+    "auth:setup": "node --env-file=.env.local --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/auth-setup.mjs",
+    "db:seed": "node --env-file=.env.local scripts/seed-expenses.mjs",
+    "gemini:measure": "node --env-file=.env.local scripts/measure-gemini.mjs"
   },
   "dependencies": {
+    "@google/genai": "^3.0.0",
+    "@neondatabase/serverless": "^1.2.0",
+    "better-auth": "^1.7.18",
     "next": "16.4.5",
+    "pg": "^8.23.1",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "recharts": "^3.10.1"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

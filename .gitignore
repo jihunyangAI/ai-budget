@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+!.env.example
+.playwright-mcp/
+
+# 작업 도구 상태 파일
+.omc/
+
+# 개인 결제 정보가 담긴 테스트 영수증
+receipt.jpg
